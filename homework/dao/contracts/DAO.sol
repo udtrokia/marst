@@ -25,7 +25,7 @@ contract DAO {
   function () public payable {
     require(msg.value >= ticket);
     if (msg.value > ticket) {
-      var refundFee = msg.value - ticket;
+      refundFee = msg.value - ticket;
       msg.sender.transfer(refundFee);
     }
   }
