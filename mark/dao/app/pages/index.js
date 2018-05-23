@@ -8,8 +8,9 @@ import { abi } from "../../build/contracts/DAO.json";
 /*
 * WEB3 API **/
 var web3 = new Web3('http://localhost:8545');
-var contractAddress = "0x1cf07eb24758beb9074ab566983a2bdfcb5d362b";// 这里修改为合约的地址
+var contractAddress = "0x21b741b4dfb37ef14fddf699b7eeb7e11065f799";// 这里修改为合约的地址
 var DAOContract = new web3.eth.Contract(abi, contractAddress);
+var contractFund;
 
 web3.eth.getAccounts(function(err, res){
   if(err) {console.log(err)}
@@ -20,10 +21,14 @@ web3.eth.getAccounts(function(err, res){
   })
 })
 
+
 function transfer() {
   DAOContract.methods.transfer(contractAddress, 1).send({from: web3.eth.defaultAccount}).then(function(res){
-      console.log(res);
-    })
+    alert("交易ID为:" + res.transactionHash)
+    alert("消耗gas:" + res.gasUsed)
+    console.log(res);
+    return
+  })
 }
 /*
 ********/
@@ -35,7 +40,7 @@ export default () => (
   <div style={css.ctn}>
     <text style={css.title}>DAO</text>
     <button style={css.btn} onClick={()=>transfer()}><h3>Crowdfund</h3></button>
-    <text>Pool:</text>
+    <text>pool:  {contractAddress}</text>
     <text style={css.date}>2018-5-23</text>
   </div>
 )

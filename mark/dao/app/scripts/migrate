@@ -1,0 +1,10 @@
+#!/usr/bin/env sh
+
+truffle compile && echo compiling...
+echo
+truffle migrate && echo migrate our constract to internet... 
+echo 
+
+# echo
+# echo run app server...
+# npm run dev
