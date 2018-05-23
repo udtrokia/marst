@@ -1,4 +1,6 @@
 #!/usr/bin/env sh
+path=`dirname $0`
+cd $path
 
 truffle compile && echo compiling...
 echo
