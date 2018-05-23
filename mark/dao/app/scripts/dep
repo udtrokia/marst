@@ -1,0 +1,27 @@
+#!/usr/bin/env sh
+path=`dirname $0`
+
+# git
+# git init && git remote add repo https://github.com/udtrokia/gig.git
+# git config core.sparsecheckout true &&
+#        echo "/mark" >> .git/info/sparse-checkout && git pull repo master
+#
+
+echo install truffle, solc...
+npm install -g truffle solc next
+echo
+cd ${path}/../.. && echo enter app path...
+echo
+truffle compile && echo compiling...
+echo
+truffle migrate && echo migrate our constract to internet... 
+echo 
+echo do not forget to record your Constract Address
+echo 
+echo now we install the dependences...
+echo
+cd ${path}/.. && npm i --save
+
+# echo
+# echo run app server...
+# npm run dev

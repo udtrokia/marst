@@ -1,0 +1,11 @@
+#!/usr/bin/env sh
+
+echo test homebrew...
+
+brew 2> /dev/null ||
+    /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+
+echo test node@8
+
+node -v 2> /dev/null ||
+    brew install node@8 

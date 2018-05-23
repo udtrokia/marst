@@ -5,8 +5,7 @@
   + metacoin (MetaCoin 案例)
 
 + Homework
-  + DAICO (作业 - DAICO)
-  + Betting number (作业 - BettingNumber)
+  + DAO (作业 - DAO)
 
 + scripts
   + dep (安装依赖环境)
