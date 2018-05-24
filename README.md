@@ -1,6 +1,6 @@
 # README
 
-+ examples (老师的教学)
++ examples (案例)
   + vote (投票案例)
   + metacoin (MetaCoin 案例)
 
